@@ -1,4 +1,5 @@
-[![Stories in Ready](https://badge.waffle.io/david-chambers/MiningTheQuartz.png?label=ready&title=Ready)](https://waffle.io/david-chambers/MiningTheQuartz)
+[![Stories in Ready](https://badge.waffle.io/ESSHackademics/MiningTheQuartz.svg?label=ready&title=Ready)](http://waffle.io/ESSHackademics/MiningTheQuartz)
+
 # Mining The Quartz - Android Edition
 Shared repo for SDK Quartz Training 2/26
 
