@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.esri.arcgisruntime.concurrent.ListenableFuture;
 import com.esri.arcgisruntime.loadable.LoadStatus;
 import com.esri.arcgisruntime.mapping.Basemap;
-import com.esri.arcgisruntime.mapping.BasemapType;
+import com.esri.arcgisruntime.mapping.Basemap.Type;
 import com.esri.arcgisruntime.mapping.view.MapView;
 import com.esri.arcgisruntime.mapping.Map;
 import com.esri.arcgisruntime.portal.Portal;
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         //inflate mapview
         mapView = (MapView)findViewById(R.id.mapView);
-        Map map = new Map(BasemapType.IMAGERY, 34.056295, -117.195800,16);
+        Map map = new Map(Basemap.Type.IMAGERY, 34.056295, -117.195800,16);
         mapView.setMap(map);
 
         //Inflate the Layer List Button
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         if(item.getType() == PortalItemType.FEATURE_SERVICE) {
                             myPortalItems.add(item);
-                            userInfo.append(String.format("Item: %s\n", item.getTitle()));
+                            //userInfo.append(String.format("Item: %s\n", item.getTitle()));
                         }
 
 
