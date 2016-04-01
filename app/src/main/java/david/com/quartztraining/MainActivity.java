@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private Portal essMaps;
 
     //Array of portal Items
-    private ArrayList<PortalItem> myPortalItems;
+    private ArrayList<String> myPortalItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,12 +109,18 @@ public class MainActivity extends AppCompatActivity {
                     final PortalUserContent portalUserContent = contentFuture.get();
 
                     //Instantiate ArrayList
-                    myPortalItems = new ArrayList<PortalItem>();
+                    myPortalItems = new ArrayList<String>();
 
                     for (PortalItem item : portalUserContent.getItems())
                     {
+
                         if(item.getType() == PortalItemType.FEATURE_SERVICE) {
-                            myPortalItems.add(item);
+                           List<PortalItem> portalItemList = portalUserContent.getItems();
+                            for(int i=0; i<portalItemList.size(); i++) {
+                                myPortalItems.add(i, portalItemList.get(i).getName());
+
+                            }
+                            //myPortalItems.add(item);
                             //userInfo.append(String.format("Item: %s\n", item.getTitle()));
                         }
 
@@ -123,9 +129,9 @@ public class MainActivity extends AppCompatActivity {
 
                     //iterate user's folders - maybe implement this in the future
                     if(myPortalItems != null){
-                        for(PortalItem item : myPortalItems){
-                            Log.d("MyTag", item.getTitle());
-                        }
+//                        for(PortalItem item : myPortalItems){
+//                            Log.d("MyTag", item.getTitle());
+//                        }
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
